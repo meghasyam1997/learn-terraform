@@ -5,7 +5,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
-    Name = "my_instances_${count.index}"
+    Name = "my_instance_${count.index}"
   }
 }
 
