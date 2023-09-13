@@ -1,5 +1,5 @@
 resource "aws_instance" "instance" {
-  count                  = 10
+  count                  = 9
   ami                    = data.aws_ami.ami.id
   instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
