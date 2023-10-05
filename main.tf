@@ -18,4 +18,3 @@ data "aws_ami" "ami" {
 data "aws_security_group" "allow_all" {
   name = "allow-all"
 }
-
