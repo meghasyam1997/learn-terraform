@@ -1,11 +1,10 @@
 resource "aws_instance" "instance" {
-  count                  = 9
+  for_each               = var.components
   ami                    = data.aws_ami.ami.id
-  instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
-    Name = "my_instance_${count.index}"
+    Name = "${each.value["name"]}-${var.env}"
   }
 }
 
